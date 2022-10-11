@@ -44,7 +44,17 @@
               factory="org.apache.catalina.users.MemoryUserDatabaseFactory"
               pathname="conf/tomcat-users.xml" />
          
-		
+
+    <Resource name="jdbc/tomcatDB" 
+		auth="Container" 
+		type="javax.sql.DataSource"
+		driverClassName="org.postgresql.Driver"
+		url="jdbc:postgresql://127.0.0.1:5432/tomcat" 
+		username="postgres" 
+		password="postgres" 
+		maxTotal="20" 
+		maxIdle="10" 
+		maxWait="-1"/>		
   </GlobalNamingResources>
 
   <!-- A "Service" is a collection of one or more "Connectors" that share
@@ -130,11 +140,6 @@
              available for use by the Realm.  -->
         <!-- Realm className="org.apache.catalina.realm.UserDatabaseRealm"
                resourceName="UserDatabase"/-->
-        <Realm className="org.apache.catalina.realm.DataSourceRealm"
-	   dataSourceName="jdbc/tomcatDB"
-	   userTable="users" userNameCol="user_name" userCredCol="user_pass"
-	   userRoleTable="user_roles" roleNameCol="role_name"/>
-
       </Realm>
 
       <Host name="localhost"  appBase="webapps"
