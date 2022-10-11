@@ -2,8 +2,11 @@
 # Tomcat Startup Script
 
 CATALINA_HOME=/home/dthibau/Formations/Tomcat/mywork/apache-tomcat-10.0.26
-JAVA_HOME=/usr/lib/jvm/java-14-oracle/
+export CATALINA_HOME
+JRE_HOME=/usr/lib/jvm/java-14-oracle/
+export JRE_HOME
 CATALINA_OPTS="-Xms512m -Xmx512m"
+export CATALINA_OPTS
 
 start() {
         echo -n "Starting Tomcat:  "
