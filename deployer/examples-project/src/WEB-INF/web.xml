@@ -21,6 +21,7 @@
                       https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
   version="6.0"
   metadata-complete="true">
+    <distributable/>
 
     <description>
       Servlet and JSP Examples.
